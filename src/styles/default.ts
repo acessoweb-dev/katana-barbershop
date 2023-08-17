@@ -1,6 +1,8 @@
 import { RFValue } from 'react-native-responsive-fontsize';
+
 const primary = '#737373';
 const secondary = '#184668';
+
 export interface DefaultTheme {
   primary: string;
   secondary: string;
@@ -14,7 +16,6 @@ export interface DefaultTheme {
   placeholder: string;
   warning: string;
   buttons: {
-
     secondaryDark: {
       foreground: string;
       background: string;
