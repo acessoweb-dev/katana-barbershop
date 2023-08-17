@@ -1,7 +1,7 @@
-// import { useAuthStore } from "store/auth"
-// import { useUserStore } from "store/user";
+import { useAuthStore } from 'store/auth';
+import { useUserStore } from 'store/user';
 
-// export const logout = () => {
-//   useAuthStore.getState().logout();
-//   useUserStore.getState().logout();
-// }
+export const logout = () => {
+  useAuthStore.getState().logout();
+  useUserStore.getState().logout();
+};

@@ -1,40 +1,46 @@
-import { API_URL } from "@env";
-import axios from "axios";
-// import { getToken } from 'store/auth';
-// import { logout } from 'utils/functions';
+import { API_URL } from '@env';
+import axios from 'axios';
 
-console.log(API_URL);
-const api = axios.create({
-  baseURL: API_URL,
-  headers: {
-    Accept: "application/json",
-  },
-});
+import { getToken } from 'utils/apiHelpers';
+import { logout } from 'utils/functions';
 
-// api.interceptors.request.use(
-//   async (config: any) => {
-//     const token = getToken();
+const createApiInstance = () => {
+  const api = axios.create({
+    baseURL: API_URL,
+    headers: {
+      Accept: 'application/json',
+    },
+  });
 
-//     if (token) {
-//       config.headers.set('Authorization', `Bearer ${token}`);
-//     }
-//     return config;
-//   },
-//   (error: any) => {
-//     return Promise.reject(error);
-//   }
-// );
+  api.interceptors.request.use(
+    async (config: any) => {
+      const token = getToken(); // Get token from authHelpers
 
-api.interceptors.response.use(
-  (response: any) => {
-    return response;
-  },
-  (error: any) => {
-    if (error.response.status === 401) {
-      // logout()
+      if (token) {
+        config.headers['Authorization'] = `Bearer ${token}`;
+      }
+      return config;
+    },
+    (error: any) => {
+      return Promise.reject(error);
     }
-    return Promise.reject(error);
-  }
-);
+  );
+
+  api.interceptors.response.use(
+    (response: any) => {
+      return response;
+    },
+    (error: any) => {
+      if (error.response.status === 401) {
+        logout();
+      }
+      return Promise.reject(error);
+    }
+  );
+
+  return api;
+};
+
+const api = createApiInstance();
 
 export default api;
