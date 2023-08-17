@@ -11,7 +11,7 @@ const Stack = createNativeStackNavigator();
 
 const Routes = () => {
   // const signed = useAuthStore(state => state.signed);
-  const signed = false;
+  const signed = true;
 
   return (
     <NavigationContainer>

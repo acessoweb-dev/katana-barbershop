@@ -21,10 +21,6 @@ const LoginRoutes = () => (
   >
     <Stack.Screen name="Login" component={useLayout(Auth.Login)} />
     <Stack.Screen name="Register" component={useLayout(Auth.Register)} />
-    <Stack.Screen
-      name="ForgotPassword"
-      component={useLayout(Auth.ForgotPassword)}
-    />
   </Stack.Navigator>
 );
 

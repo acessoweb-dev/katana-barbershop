@@ -1,7 +1,8 @@
 import React from 'react';
-
 import * as S from './styles';
 import { ContentScroll } from 'styles/commonStyles';
+
+import { Text } from 'react-native';
 
 import { Props } from 'interfaces/routes.interface';
 
@@ -175,6 +176,7 @@ const Register = ({ route, navigation }: Props) => {
   return (
     <ContentScroll>
       <S.RegisterContainer>
+        <Text>Register</Text>
         {/* <Column
           style={{
             gap: 20,

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-
 import * as S from './styles';
+import { Text } from 'react-native';
 
 import api from 'services/api';
 
@@ -70,22 +70,9 @@ const Login = ({ route, navigation }: Props) => {
   //   resolver: yupResolver(loginSchema),
   // });
 
-  const handleGetTeste = async () => {
-    const { data: response } = await api.get('/lista_sobre.php', {
-      params: {
-        usuario_id: 20,
-      },
-    });
-
-    console.log(response);
-  };
-
-  useEffect(() => {
-    handleGetTeste();
-  }, []);
-
   return (
     <S.LoginContainer>
+      <Text>Login</Text>
       {/* <BackgroundAuth source={bannerAuth} resizeMode="contain" />
       <ImageAuth source={logoauth} resizeMode="contain" />
       <ContentScroll style={{ marginTop: 150 }}>

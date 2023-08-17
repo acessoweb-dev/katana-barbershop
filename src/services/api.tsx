@@ -14,7 +14,7 @@ const createApiInstance = () => {
 
   api.interceptors.request.use(
     async (config: any) => {
-      const token = getToken(); // Get token from authHelpers
+      const token = getToken();
 
       if (token) {
         config.headers['Authorization'] = `Bearer ${token}`;

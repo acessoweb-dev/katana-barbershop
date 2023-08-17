@@ -1,6 +1,6 @@
 import React from 'react';
-
 import * as S from './styles';
+import { Text } from 'react-native';
 
 import { Props } from 'interfaces/routes.interface';
 
@@ -60,6 +60,7 @@ const ForgotPassword = ({ route, navigation }: Props) => {
 
   return (
     <S.ForgotPasswordContainer>
+      <Text>ForgotPassword</Text>
       {/* <BackgroundAuth source={bannerAuth} resizeMode="contain" />
       <ImageAuth source={logoauth} resizeMode="contain" />
       <Column style={{ paddingHorizontal: 50, gap: 25 }}>
