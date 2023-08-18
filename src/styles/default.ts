@@ -36,6 +36,9 @@ export interface DefaultTheme {
       22: string;
       26: string;
       30: string;
+      40: string;
+      50: string;
+      55: string;
     };
   };
 }
@@ -76,6 +79,9 @@ export const defaultTheme: DefaultTheme = {
       22: `${RFValue(22)}px`,
       26: `${RFValue(26)}px`,
       30: `${RFValue(30)}px`,
+      40: `${RFValue(40)}px`,
+      50: `${RFValue(50)}px`,
+      55: `${RFValue(55)}px`,
     },
   },
 };

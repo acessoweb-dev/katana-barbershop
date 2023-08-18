@@ -1,7 +1,9 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
 
 import * as S from './styles';
+import { defaultTheme } from 'styles/default';
+
+import { useNavigation } from '@react-navigation/native';
 
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
 import { TouchableOpacity } from 'react-native';
@@ -16,7 +18,7 @@ const HomeHeader = () => {
     <S.HomeHeaderContainer>
       <S.HomeHeaderContent>
         <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-          <FontAwesome5 name="bars" size={25} color={'#737373'} />
+          <FontAwesome5 name="bars" size={26} color={defaultTheme.primary} />
         </TouchableOpacity>
       </S.HomeHeaderContent>
     </S.HomeHeaderContainer>

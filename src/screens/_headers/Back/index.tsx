@@ -1,10 +1,13 @@
 import React from 'react';
-import { useNavigation } from '@react-navigation/native';
 
 import * as S from './styles';
+import { defaultTheme } from 'styles/default';
 
-import { TouchableOpacity } from 'react-native';
+import { Image, TouchableOpacity } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
+
 import FontAwesome5 from '@expo/vector-icons/FontAwesome5';
+import { backIcon } from 'assets';
 
 interface BackHeader {
   title?: string;
@@ -16,12 +19,12 @@ const BackHeader = ({ title }: BackHeader) => {
   return (
     <S.BackHeaderContainer>
       <S.BackHeaderContent>
-        <TouchableOpacity onPress={() => navigation.goBack()}>
-          <FontAwesome5 name="chevron-left" size={25} color="#184668" />
+        <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+          <FontAwesome5 name="bars" size={26} color={defaultTheme.primary} />
         </TouchableOpacity>
         {title ? <S.BackHeaderTitle>{title}</S.BackHeaderTitle> : null}
-        <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
-          <FontAwesome5 name="bars" size={25} color="#737373" />
+        <TouchableOpacity onPress={() => navigation.goBack()}>
+          <Image style={{ width: 18, height: 18 }} source={backIcon} />
         </TouchableOpacity>
       </S.BackHeaderContent>
     </S.BackHeaderContainer>

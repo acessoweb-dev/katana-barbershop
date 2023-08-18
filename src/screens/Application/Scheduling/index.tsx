@@ -2,17 +2,16 @@ import React from 'react';
 import * as S from './styles';
 
 import BackHeader from 'screens/_headers/Back';
-import { Text } from 'react-native';
+import { Button } from 'components';
 
 import { Props } from 'interfaces/routes.interface';
 
 const Scheduling = ({ route, navigation }: Props) => {
   return (
     <S.SchedulingContainer>
-      <BackHeader />
-      <S.SchedulingContent>
-        <Text>Scheduling</Text>
-      </S.SchedulingContent>
+      <BackHeader title="Agendamento" />
+
+      <S.SchedulingContent></S.SchedulingContent>
     </S.SchedulingContainer>
   );
 };
