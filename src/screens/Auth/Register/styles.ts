@@ -1,26 +1,28 @@
 import styled, { DefaultTheme } from 'styled-components/native';
-import { Container as ContainerDefault } from 'styles/commonStyles';
+import { ContentScroll } from 'styles/commonStyles';
 
-interface BoxProps {
-  active: boolean;
-}
+export const RegisterContainer = styled(ContentScroll)``;
 
-export const RegisterContainer = styled(ContainerDefault)`
-  /* justify-content: center;
-  align-items: center; */
-  padding: 0px 15px;
-  margin-bottom: 15px;
-`;
-
-export const Box = styled.TouchableOpacity<BoxProps>`
-  padding: 20px 15px;
-  border-radius: 15px;
-  width: 150px;
+export const RegisterWrapper = styled.View`
+  flex: 1;
+  justify-content: center;
   align-items: center;
-  background-color: ${({ active }: { active: boolean }) =>
-    active ? '#B9D8E3' : '#E4E6E6'};
+  padding: 20px 40px;
 `;
-export const BoxTitle = styled.Text`
-  font-size: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[14]};
-  color: ${({ theme }: { theme: DefaultTheme }) => theme.secondary};
+
+export const RegisterTitle = styled.Text`
+  font-family: 'Agrandir';
+  font-size: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[26]};
+  font-weight: bold;
+  color: ${({ theme }: { theme: DefaultTheme }) => theme.textPrimary};
+  margin-bottom: 60px;
+`;
+
+export const RegisterInputsWrapper = styled.View`
+  flex-direction: column;
+  width: 100%;
+`;
+
+export const RegisterSubmit = styled.View`
+  margin-top: 40px;
 `;

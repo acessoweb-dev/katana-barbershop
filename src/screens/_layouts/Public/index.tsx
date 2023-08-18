@@ -14,10 +14,6 @@ const Public = ({ children }: { children: React.ReactElement }) => {
     }
   }, []);
 
-  return (
-    <Container>
-      <Content>{children}</Content>
-    </Container>
-  );
+  return <Container>{children}</Container>;
 };
 export default Public;

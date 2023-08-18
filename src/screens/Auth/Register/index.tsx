@@ -1,8 +1,7 @@
-import React from 'react';
+import React, { useState } from 'react';
 import * as S from './styles';
-import { ContentScroll } from 'styles/commonStyles';
 
-import { Text } from 'react-native';
+import { Button, Input } from 'components';
 
 import { Props } from 'interfaces/routes.interface';
 
@@ -24,6 +23,19 @@ import { Props } from 'interfaces/routes.interface';
 // import InputImage from 'components/Inputs/InputImage';
 
 const Register = ({ route, navigation }: Props) => {
+  const [nameValue, setNameValue] = useState('');
+  const [dateValue, setDateValue] = useState('');
+  const [phoneValue, setPhoneValue] = useState('');
+  const [emailValue, setEmailValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
+
+  const handleChangeName = (value: any) => setNameValue(value);
+  const handleChangeDate = (value: any) => setDateValue(value);
+  const handleChangePhone = (value: any) => setPhoneValue(value);
+  const handleChangeEmail = (value: any) => setEmailValue(value);
+  const handleChangePassword = (value: any) => setPasswordValue(value);
+
+  const handleSubmitLogin = () => {};
   // const [loading, setLoading] = React.useState<boolean>(false);
 
   // const [estados, setEstados] = React.useState<any>([]);
@@ -174,186 +186,63 @@ const Register = ({ route, navigation }: Props) => {
   // }, []);
 
   return (
-    <ContentScroll>
-      <S.RegisterContainer>
-        <Text>Register</Text>
-        {/* <Column
-          style={{
-            gap: 20,
-            paddingHorizontal: 20,
-          }}
-        >
-          <TitleAuth style={{ marginTop: 15 }}>Cadastre-se</TitleAuth>
-          <ButtonText style={{ fontSize: 19 }}>
-            É profissional ou usuário?
-          </ButtonText>
+    <S.RegisterContainer
+      extraScrollHeight={50}
+      contentContainerStyle={{
+        flex: 1,
+      }}
+    >
+      <S.RegisterWrapper>
+        <S.RegisterTitle>Cadastre-se</S.RegisterTitle>
 
-          <Row style={{ alignItems: 'center', justifyContent: 'space-around' }}>
-            <Box
-              active={userType === 'Profissional'}
-              onPress={() => setUserType('Profissional')}
-            >
-              <BoxTitle>Profissional</BoxTitle>
-            </Box>
-            <Box
-              active={userType !== 'Profissional'}
-              onPress={() => setUserType('Usuário')}
-            >
-              <BoxTitle>Usuário</BoxTitle>
-            </Box>
-          </Row>
-
+        <S.RegisterInputsWrapper>
           <Input
+            type="text"
+            keyboardType="default"
             label="Nome completo:"
-            gray
-            removeRadius
-            control={control}
-            name="nome"
-            autoCapitalize="none"
-            returnKeyType="next"
-            error={errors.nome}
-            blurOnSubmit={false}
-            onSubmitEditing={() => setFocus('email')}
+            value={nameValue}
+            handleOnChange={handleChangeName}
           />
           <Input
-            label="E-mail:"
-            control={control}
-            name="email"
-            gray
-            removeRadius
-            autoCapitalize="none"
+            type="text"
+            keyboardType="default"
+            label="Data de nascimento:"
+            value={dateValue}
+            handleOnChange={handleChangeDate}
+          />
+          <Input
+            type="text"
+            keyboardType="number-pad"
+            label="Celular:"
+            value={phoneValue}
+            handleOnChange={handleChangePhone}
+          />
+          <Input
+            type="text"
             keyboardType="email-address"
-            returnKeyType="next"
-            error={errors.email}
-            blurOnSubmit={false}
-            onSubmitEditing={() => setFocus('whatsapp')}
+            label="E-mail:"
+            value={emailValue}
+            handleOnChange={handleChangeEmail}
           />
           <Input
-            label="Whatsapp:"
-            control={control}
-            name="whatsapp"
-            gray
-            keyboardType="phone-pad"
-            removeRadius
-            mask={'cell'}
-            autoCapitalize="none"
-            returnKeyType="next"
-            error={errors.whatsapp}
-            blurOnSubmit={false}
-            onSubmitEditing={() => setFocus('senha')}
-          />
-          <Input
+            type="password"
+            keyboardType="default"
             label="Senha:"
-            control={control}
-            name="senha"
-            secure
-            gray
-            removeRadius
-            autoCapitalize="none"
-            returnKeyType="done"
-            error={errors.senha}
+            value={passwordValue}
+            handleOnChange={handleChangePassword}
           />
-          {userType === 'Profissional' && (
-            <>
-              <Row>
-                <InputSelect
-                  items={estados.map((estado: any) => ({
-                    label: estado.nome,
-                    value: estado.id,
-                  }))}
-                  gray
-                  removeRadius
-                  control={control}
-                  label="Estado:"
-                  name="estado"
-                  error={errors.estado}
-                />
-                <InputSelect
-                  items={cidade.map((estado: any) => ({
-                    label: estado.nome,
-                    value: estado.id,
-                  }))}
-                  gray
-                  removeRadius
-                  control={control}
-                  label="Cidade:"
-                  error={errors.cidade}
-                  name="cidade"
-                />
-              </Row>
 
-              <InputSelect
-                items={categorias.map((estado: any) => ({
-                  label: estado.nome,
-                  value: estado.id,
-                }))}
-                gray
-                removeRadius
-                control={control}
-                label="Categoria:"
-                error={errors.categoria_id}
-                name="categoria_id"
-              />
-              <Input
-                label="Tempo de experiência:"
-                control={control}
-                name="anos_experiencia"
-                gray
-                removeRadius
-                autoCapitalize="none"
-                returnKeyType="next"
-                keyboardType="number-pad"
-                error={errors.anos_experiencia}
-                blurOnSubmit={false}
-                onSubmitEditing={() => setFocus('valor')}
-              />
-              <Input
-                label="Valor médio do serviço:"
-                control={control}
-                name="valor"
-                gray
-                mask={'currency'}
-                keyboardType="number-pad"
-                removeRadius
-                autoCapitalize="none"
-                returnKeyType="next"
-                error={errors.valor}
-                blurOnSubmit={false}
-                onSubmitEditing={() => setFocus('descricao')}
-              />
-              <Input
-                label="Descrição:"
-                control={control}
-                name="descricao"
-                gray
-                multiline
-                removeRadius
-                returnKeyType="done"
-                error={errors.descricao}
-              />
-
-              <InputImage
-                label="Fotos do serviço prestado:"
-                control={control}
-                name="image"
-              />
-            </>
-          )}
-
-          <Button
-            onPress={handleSubmit(handleSubmitRegister)}
-            label="Cadastrar"
-            loading={loading}
-            fullWidth
-            color="secondaryDark"
-            variantType="block"
-          />
-          <TouchableOpacity onPress={() => navigation.goBack()}>
-            <ButtonText>Voltar</ButtonText>
-          </TouchableOpacity>
-        </Column> */}
-      </S.RegisterContainer>
-    </ContentScroll>
+          <S.RegisterSubmit>
+            <Button
+              inverted
+              fullWidth
+              label="Cadastrar"
+              handleOnPress={handleSubmitLogin}
+            />
+          </S.RegisterSubmit>
+        </S.RegisterInputsWrapper>
+      </S.RegisterWrapper>
+    </S.RegisterContainer>
   );
 };
 

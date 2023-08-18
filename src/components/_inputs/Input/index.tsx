@@ -11,7 +11,7 @@ import { Feather } from '@expo/vector-icons';
 
 export interface InputProps {
   type: 'text' | 'password';
-  variantType: 'default' | 'login';
+  variantType?: 'default' | 'login';
   label?: string;
   placeholder?: string;
   error?: string;
@@ -26,8 +26,8 @@ export interface InputProps {
     | 'email-address'
     | 'phone-pad'
     | 'url';
-  value?: string;
-  handleOnChange?: (value: string) => void;
+  value: string;
+  handleOnChange: (value: string) => void;
 }
 
 const Input: React.FunctionComponent<InputProps> = ({

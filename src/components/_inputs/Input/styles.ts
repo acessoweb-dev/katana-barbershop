@@ -60,7 +60,7 @@ export const Input = styled.TextInput<InputProps>`
   ${({ variantType, theme }) => {
     if (variantType === 'default') {
       return css`
-        height: 60px;
+        height: 55px;
         color: ${theme.inputLogin};
       `;
     }

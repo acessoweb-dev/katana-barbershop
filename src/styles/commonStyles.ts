@@ -19,9 +19,10 @@ export const Container = styled(SafeAreaView)`
 // ------------ CONTENT ------------
 
 export const ContentPage = styled.View`
+  flex: 1;
   justify-content: center;
   align-items: center;
-  padding: 0px 15px;
+  padding: 0px 40px;
   margin: 15px 0px;
 `;
 

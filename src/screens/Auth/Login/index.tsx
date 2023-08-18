@@ -103,7 +103,6 @@ const Login = ({ route, navigation }: Props) => {
               source={logoTransparentImg}
             />
           </S.LoginLogo>
-
           <S.LoginTitle>Login</S.LoginTitle>
         </S.LoginHeader>
 
@@ -125,12 +124,16 @@ const Login = ({ route, navigation }: Props) => {
             handleOnChange={handleChangePassword}
           />
           <S.LoginNavigationWrapper>
-            <S.LoginNavigationItem>
+            <S.LoginNavigationItem
+              onPress={() => navigation.navigate('Register')}
+            >
               <S.LoginNavigationItemLabel>
                 Esqueci minha senha
               </S.LoginNavigationItemLabel>
             </S.LoginNavigationItem>
-            <S.LoginNavigationItem>
+            <S.LoginNavigationItem
+              onPress={() => navigation.navigate('Register')}
+            >
               <S.LoginNavigationItemLabel>
                 Não tem uma conta? Cadastre-se
               </S.LoginNavigationItemLabel>

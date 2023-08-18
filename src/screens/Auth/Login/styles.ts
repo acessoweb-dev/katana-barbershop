@@ -4,10 +4,7 @@ import { Container, ContentScroll } from 'styles/commonStyles';
 export const LoginContainer = styled(Container)`
   position: relative;
   flex: 1;
-  /* justify-content: center;
-  align-items: center; */
   padding: 30px 40px;
-  /* row-gap: 40px; */
 `;
 
 export const LoginWrapper = styled(ContentScroll)``;
@@ -36,6 +33,7 @@ export const LoginInputsWrapper = styled.View`
 export const LoginNavigationWrapper = styled.View`
   flex-direction: column;
   row-gap: 8px;
+  margin-top: 10px;
 `;
 
 export const LoginNavigationItem = styled.TouchableOpacity``;
