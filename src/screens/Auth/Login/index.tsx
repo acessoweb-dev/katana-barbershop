@@ -1,10 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import * as S from './styles';
-import { Text } from 'react-native';
+import { Text, View } from 'react-native';
 
 import api from 'services/api';
 
 import { Props } from 'interfaces/routes.interface';
+import { InputSelect } from 'components';
+import { authIcon, passwordIcon } from 'assets';
 
 // import { loginSchema } from 'validators/auth.schemas';
 // import { UserLogin } from 'interfaces/auth.interface';
@@ -23,6 +25,27 @@ import { Props } from 'interfaces/routes.interface';
 // import { Image, TouchableOpacity } from 'react-native';
 
 const Login = ({ route, navigation }: Props) => {
+  const [value, setValue] = useState({ label: '', value: '' });
+
+  const handleChange = (val: any) => {
+    setValue(val);
+  };
+
+  const options = [
+    {
+      label: 'Teste 3',
+      value: 'teste-01',
+    },
+    {
+      label: 'Teste 2',
+      value: 'teste-02',
+    },
+    {
+      label: 'Teste 1',
+      value: 'teste-03',
+    },
+  ];
+
   // const [loading, setLoading] = React.useState<boolean>(false);
 
   // const toast = useToast();
@@ -72,7 +95,30 @@ const Login = ({ route, navigation }: Props) => {
 
   return (
     <S.LoginContainer>
-      <Text>Login</Text>
+      {/* <Text>Login</Text> */}
+
+      {/* <View
+        style={{
+          // flex: 1,
+          flexDirection: 'column',
+          rowGap: 15,
+          borderWidth: 1,
+          borderColor: 'white',
+        }}
+      >
+        <Input
+          type="text"
+          placeholder="Testando"
+          value={value}
+          handleOnChange={handleChange}
+        />
+        <Input
+          type="password"
+          placeholder="Testando"
+          value={value}
+          handleOnChange={handleChange}
+        />
+      </View> */}
       {/* <BackgroundAuth source={bannerAuth} resizeMode="contain" />
       <ImageAuth source={logoauth} resizeMode="contain" />
       <ContentScroll style={{ marginTop: 150 }}>

@@ -1,50 +1,25 @@
 import { RFValue } from 'react-native-responsive-fontsize';
 
-const primary = '#737373';
-const secondary = '#184668';
-
 export interface DefaultTheme {
   primary: string;
-  secondary: string;
   text: string;
-  border: string;
+  textPrimary: string;
+  textSecondary: string;
   header: string;
   background: string;
+  backgroundApp: string;
   input: string;
+  inputLogin: string;
   error: string;
   success: string;
   placeholder: string;
   warning: string;
-  buttons: {
-    secondaryDark: {
-      foreground: string;
-      background: string;
-    };
-    linear: {
-      foreground: string;
-      background: string;
-    };
-    gray: {
-      foreground: string;
-      background: string;
-    };
+  inputs: {
     primary: {
       foreground: string;
       background: string;
     };
     secondary: {
-      foreground: string;
-      background: string;
-    };
-    danger: {
-      foreground: string;
-      background: string;
-    };
-    success: {
-      foreground: string;
-      background: string;
-    };
-    warning: {
       foreground: string;
       background: string;
     };
@@ -66,49 +41,27 @@ export interface DefaultTheme {
 }
 
 export const defaultTheme: DefaultTheme = {
-  primary,
-  secondary: secondary,
-  text: '#737373',
-  border: secondary,
-  background: '#FFFFFF',
+  primary: '#C6942A',
+  text: '#000000',
+  textPrimary: 'rgba(255, 255, 255, 0.98)',
+  textSecondary: '#737373',
+  background: '#090F0F',
+  backgroundApp: '#282929',
   error: '#FF5630',
-  header: primary,
-  input: '#7A869A',
+  header: 'transparent',
+  input: 'rgba(255, 255, 255, 0.17)',
+  inputLogin: '#F9FAFB',
   success: '#20A612',
   warning: '#FF8F35',
   placeholder: '#E2E2E2',
-  buttons: {
-    secondaryDark: {
-      foreground: '#FFFFFF',
-      background: secondary,
-    },
-    linear: {
-      foreground: '#FFFFFF',
-      background: '#FFFFFF',
-    },
-    gray: {
-      foreground: '#737373',
-      background: '#E2E2E2',
-    },
+  inputs: {
     primary: {
-      foreground: '#FFFFFF',
-      background: primary,
+      foreground: '#C6942A',
+      background: '#C6942A',
     },
     secondary: {
-      foreground: secondary,
-      background: '#EDEDED',
-    },
-    danger: {
       foreground: '#FFFFFF',
-      background: '#F93B31',
-    },
-    success: {
-      foreground: '#FFFFFF',
-      background: '#35c75a',
-    },
-    warning: {
-      foreground: '#FFFFFF',
-      background: '#FDCC01',
+      background: '#FFFFFF',
     },
   },
   fonts: {

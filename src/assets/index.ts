@@ -16,3 +16,6 @@ export const announcementsIcon = require('./icons/announcements.png');
 export const aboutusIcon = require('./icons/aboutus.png');
 export const suggestionsIcon = require('./icons/suggestions.png');
 export const userIcon = require('./icons/user.png');
+export const passwordIcon = require('./icons/password.png');
+export const authIcon = require('./icons/auth.png');
+export const chevronDownIcon = require('./icons/chevronDown.png');

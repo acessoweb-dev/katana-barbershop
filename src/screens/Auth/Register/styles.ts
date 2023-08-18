@@ -6,8 +6,8 @@ interface BoxProps {
 }
 
 export const RegisterContainer = styled(ContainerDefault)`
-  justify-content: center;
-  align-items: center;
+  /* justify-content: center;
+  align-items: center; */
   padding: 0px 15px;
   margin-bottom: 15px;
 `;

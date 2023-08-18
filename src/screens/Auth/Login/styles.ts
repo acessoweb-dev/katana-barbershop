@@ -2,9 +2,10 @@ import styled, { DefaultTheme } from 'styled-components/native';
 import { Container as ContainerDefault } from 'styles/commonStyles';
 
 export const LoginContainer = styled(ContainerDefault)`
+  position: relative;
+  flex: 1;
   justify-content: center;
   align-items: center;
-  position: relative;
 `;
 
 export const BackgroundAuth = styled.Image`

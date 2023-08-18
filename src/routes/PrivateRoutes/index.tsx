@@ -19,43 +19,7 @@ const useLayout = (Component: React.FC<Props>) => (props: any) => (
 
 const Drawer = createDrawerNavigator();
 
-// const ProfissionaisRoutes = () => (
-//   <Stack.Navigator
-//     initialRouteName="Profissionais"
-//     screenOptions={{ headerShown: false }}
-//   >
-//     <Stack.Screen
-//       name="Profissionais"
-//       component={useLayout(Dashboard.Profissionais)}
-//     />
-//     <Stack.Screen
-//       name="ProfissionaisDetails"
-//       component={useLayout(Dashboard.ProfissionaisDetails)}
-//     />
-//   </Stack.Navigator>
-// );
-
-// const CategoriasRoutes = () => (
-//   <Stack.Navigator
-//     initialRouteName="Categorias"
-//     screenOptions={{ headerShown: false }}
-//   >
-//     <Stack.Screen
-//       name="Categorias"
-//       component={useLayout(Dashboard.Categorias)}
-//     />
-//     <Stack.Screen
-//       name="ProfissionaisDetails"
-//       component={useLayout(Dashboard.ProfissionaisDetails)}
-//     />
-//     <Stack.Screen
-//       name="Profissionais"
-//       component={useLayout(Dashboard.Profissionais)}
-//     />
-//   </Stack.Navigator>
-// );
-
-const DashboardStackRoutes = () => (
+const ApplicationStackRoutes = () => (
   <Drawer.Navigator
     initialRouteName="Home"
     drawerContent={props => <DrawerCustom {...props} />}
@@ -88,7 +52,7 @@ const DashboardStackRoutes = () => (
 
 const PrivateRoutes = () => (
   <Stack.Navigator screenOptions={{ headerShown: false }}>
-    <Stack.Screen name="MainApplication" component={DashboardStackRoutes} />
+    <Stack.Screen name="MainApplication" component={ApplicationStackRoutes} />
   </Stack.Navigator>
 );
 
