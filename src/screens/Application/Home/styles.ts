@@ -4,6 +4,8 @@ import { ContainerPage, ContentScroll } from 'styles/commonStyles';
 
 export const HomeContainer = styled(ContainerPage)`
   position: relative;
+  background-color: ${({ theme }: { theme: DefaultTheme }) =>
+    theme.backgroundApp};
 `;
 
 export const HomeContent = styled(ContentScroll)`

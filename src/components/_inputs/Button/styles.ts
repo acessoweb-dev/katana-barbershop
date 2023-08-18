@@ -25,9 +25,9 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
 
   width: ${({ fullWidth }) => (fullWidth ? '100%' : 'auto')};
   height: ${({ small }) => (small ? '40px' : '50px')};
-  padding: 0px 35px;
+  padding: 0px 45px;
   border-radius: ${({ variantType }) =>
-    variantType === 'rounded' ? '100px' : '10px'};
+    variantType === 'rounded' ? '100px' : '15px'};
 
   ${({ disabled, loading }) => (disabled || loading) && 'opacity:  0.5;'}
   ${({ inverted, theme }) => {
@@ -37,25 +37,28 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
       `;
 
     return css`
+      height: 55px;
       border-width: 1px;
-      border-color: ${theme.inputs.primary.background};
+      background-color: ${theme.inputs.tertiary.background};
     `;
   }}
 `;
 
 export const ButtonLabel = styled.Text<LabelProps>`
+  font-family: 'Agrandir';
   font-size: ${({ small, theme }) =>
     small ? theme.fonts.size[14] : theme.fonts.size[18]};
-  font-weight: bold;
-  font-family: 'Agrandir';
 
   ${({ theme, inverted }) => {
     if (inverted)
       return css`
+        font-weight: bold;
         color: ${theme.inputs.secondary.background};
       `;
 
     return css`
+      font-weight: 400;
+      letter-spacing: 3px;
       color: ${theme.inputs.primary.background};
     `;
   }}

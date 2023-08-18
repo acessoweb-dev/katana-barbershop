@@ -69,19 +69,19 @@ export default InputSelect;
 
 const pickerSelectStyles = StyleSheet.create({
   inputIOS: {
-    height: 50,
-    fontSize: RFValue(14),
-    color: defaultTheme.input,
-    width: width,
     flexWrap: 'wrap',
     paddingHorizontal: 10,
+    width: width,
+    height: 55,
+    fontSize: RFValue(14),
+    color: defaultTheme.input,
   },
   inputAndroid: {
-    height: 50,
-    fontSize: RFValue(14),
-    color: defaultTheme.input,
-    width: width,
     flexWrap: 'wrap',
     paddingHorizontal: 10,
+    width: width,
+    height: 55,
+    fontSize: RFValue(14),
+    color: defaultTheme.input,
   },
 });

@@ -23,6 +23,10 @@ export interface DefaultTheme {
       foreground: string;
       background: string;
     };
+    tertiary: {
+      foreground: string;
+      background: string;
+    };
   };
   fonts: {
     size: {
@@ -69,6 +73,10 @@ export const defaultTheme: DefaultTheme = {
     secondary: {
       foreground: '#FFFFFF',
       background: '#FFFFFF',
+    },
+    tertiary: {
+      foreground: '#000000',
+      background: '#000000',
     },
   },
   fonts: {

@@ -2,6 +2,7 @@ import styled from 'styled-components/native';
 import { DefaultTheme } from 'styles/default';
 
 export const HomeHeaderContainer = styled.View`
+  z-index: 100;
   justify-content: center;
   background-color: transparent;
 `;
