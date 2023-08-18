@@ -1,3 +1,4 @@
+import { RFValue } from 'react-native-responsive-fontsize';
 import styled, { DefaultTheme } from 'styled-components/native';
 import { ContainerPage, ContentScroll } from 'styles/commonStyles';
 
@@ -10,21 +11,22 @@ export const HomeContent = styled(ContentScroll)`
 `;
 
 export const HomeHero = styled.View`
-  row-gap: 30px;
+  row-gap: 10px;
   padding: 0 20px;
 `;
 
 export const HomeTitle = styled.Text`
-  font-size: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[30]};
-  font-weight: bold;
+  font-family: 'LeagueGothic';
+  font-size: ${RFValue(40)}px;
+  line-height: ${RFValue(40)}px;
   text-transform: uppercase;
-  letter-spacing: 2px;
+  letter-spacing: 4px;
   color: ${({ theme }: { theme: DefaultTheme }) => theme.textPrimary};
 `;
 
 export const HomeTitleContrast = styled(HomeTitle)`
-  font-size: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[50]};
-  line-height: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[55]};
+  font-size: ${RFValue(70)}px;
+  line-height: ${RFValue(100)}px;
   color: ${({ theme }: { theme: DefaultTheme }) => theme.primary};
 `;
 

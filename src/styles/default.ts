@@ -37,8 +37,12 @@ export interface DefaultTheme {
       26: string;
       30: string;
       40: string;
+      45: string;
       50: string;
       55: string;
+      60: string;
+      65: string;
+      70: string;
     };
   };
 }
@@ -80,8 +84,12 @@ export const defaultTheme: DefaultTheme = {
       26: `${RFValue(26)}px`,
       30: `${RFValue(30)}px`,
       40: `${RFValue(40)}px`,
+      45: `${RFValue(45)}px`,
       50: `${RFValue(50)}px`,
       55: `${RFValue(55)}px`,
+      60: `${RFValue(60)}px`,
+      65: `${RFValue(65)}px`,
+      70: `${RFValue(70)}px`,
     },
   },
 };

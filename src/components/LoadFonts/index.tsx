@@ -9,6 +9,7 @@ const LoadFonts = ({ children }: { children: React.ReactElement }) => {
   const [fontsLoaded] = useFonts({
     Agrandir: require('assets/fonts/Agrandir-Regular.otf'),
     RedHatDisplay: require('assets/fonts/RedHatDisplay-Regular.ttf'),
+    LeagueGothic: require('assets/fonts/LeagueGothic-Regular.ttf'),
   });
 
   const onLayoutRootView = React.useCallback(async () => {
