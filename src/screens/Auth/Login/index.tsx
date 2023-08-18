@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import * as S from './styles';
-import { Text, View } from 'react-native';
+import { Image, Text, View } from 'react-native';
+
+import { Button, Input } from 'components';
+import { authIcon, passwordIcon, logoTransparentImg } from 'assets';
 
 import api from 'services/api';
 
 import { Props } from 'interfaces/routes.interface';
-import { InputSelect } from 'components';
-import { authIcon, passwordIcon } from 'assets';
 
 // import { loginSchema } from 'validators/auth.schemas';
 // import { UserLogin } from 'interfaces/auth.interface';
@@ -25,26 +26,18 @@ import { authIcon, passwordIcon } from 'assets';
 // import { Image, TouchableOpacity } from 'react-native';
 
 const Login = ({ route, navigation }: Props) => {
-  const [value, setValue] = useState({ label: '', value: '' });
+  const [userValue, setUserValue] = useState('');
+  const [passwordValue, setPasswordValue] = useState('');
 
-  const handleChange = (val: any) => {
-    setValue(val);
+  const handleChangeUser = (value: any) => {
+    setUserValue(value);
   };
 
-  const options = [
-    {
-      label: 'Teste 3',
-      value: 'teste-01',
-    },
-    {
-      label: 'Teste 2',
-      value: 'teste-02',
-    },
-    {
-      label: 'Teste 1',
-      value: 'teste-03',
-    },
-  ];
+  const handleChangePassword = (value: any) => {
+    setPasswordValue(value);
+  };
+
+  const handleSubmitLogin = () => {};
 
   // const [loading, setLoading] = React.useState<boolean>(false);
 
@@ -95,80 +88,68 @@ const Login = ({ route, navigation }: Props) => {
 
   return (
     <S.LoginContainer>
-      {/* <Text>Login</Text> */}
-
-      {/* <View
-        style={{
-          // flex: 1,
-          flexDirection: 'column',
-          rowGap: 15,
-          borderWidth: 1,
-          borderColor: 'white',
+      <S.LoginWrapper
+        contentContainerStyle={{
+          flex: 1,
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          rowGap: 40,
         }}
       >
-        <Input
-          type="text"
-          placeholder="Testando"
-          value={value}
-          handleOnChange={handleChange}
-        />
-        <Input
-          type="password"
-          placeholder="Testando"
-          value={value}
-          handleOnChange={handleChange}
-        />
-      </View> */}
-      {/* <BackgroundAuth source={bannerAuth} resizeMode="contain" />
-      <ImageAuth source={logoauth} resizeMode="contain" />
-      <ContentScroll style={{ marginTop: 150 }}>
-        <Column style={{ paddingHorizontal: 50, gap: 25 }}>
-          <TitleAuth>Login</TitleAuth>
+        <S.LoginHeader>
+          <S.LoginLogo>
+            <Image
+              style={{ width: 120, height: 120 }}
+              source={logoTransparentImg}
+            />
+          </S.LoginLogo>
+
+          <S.LoginTitle>Login</S.LoginTitle>
+        </S.LoginHeader>
+
+        <S.LoginInputsWrapper>
           <Input
-            control={control}
-            name="email"
-            autoCapitalize="none"
-            placeholder="Email"
-            Icon={email}
-            keyboardType="email-address"
-            returnKeyType="next"
-            error={errors.email}
-            blurOnSubmit={false}
-            onSubmitEditing={() => setFocus('senha')}
+            type="text"
+            variantType="login"
+            placeholder="Usuário"
+            icon={authIcon}
+            value={userValue}
+            handleOnChange={handleChangeUser}
           />
           <Input
-            control={control}
-            secure
-            Icon={password}
+            type="password"
+            variantType="login"
             placeholder="Senha"
-            name="senha"
-            autoCapitalize="none"
-            returnKeyType="done"
-            error={errors.senha}
+            icon={passwordIcon}
+            value={passwordValue}
+            handleOnChange={handleChangePassword}
           />
-          <TouchableOpacity
-            onPress={() => navigation.navigate('ForgotPassword')}
-          >
-            <ButtonText>Esqueci minha senha</ButtonText>
-          </TouchableOpacity>
-          <Button
-            onPress={handleSubmit(handleSubmitLogin)}
-            label="Logar"
-            loading={loading}
-            fullWidth
-            color="secondaryDark"
-            variantType="block"
-          />
-          <TouchableOpacity onPress={() => navigation.navigate('Register')}>
-            <ButtonText style={{ fontSize: 18 }}>
-              Não possui conta? Cadastre-se agora!
-            </ButtonText>
-          </TouchableOpacity>
-          <ButtonText style={{ fontSize: 16, marginTop: 50 }}>
-            Faça login para acessar todos os recursos do aplicativo
-          </ButtonText>
-        </Column>
-      </ContentScroll> */}
+          <S.LoginNavigationWrapper>
+            <S.LoginNavigationItem>
+              <S.LoginNavigationItemLabel>
+                Esqueci minha senha
+              </S.LoginNavigationItemLabel>
+            </S.LoginNavigationItem>
+            <S.LoginNavigationItem>
+              <S.LoginNavigationItemLabel>
+                Não tem uma conta? Cadastre-se
+              </S.LoginNavigationItemLabel>
+            </S.LoginNavigationItem>
+          </S.LoginNavigationWrapper>
+        </S.LoginInputsWrapper>
+
+        <Button
+          variantType="rounded"
+          inverted
+          fullWidth
+          label="Entrar"
+          handleOnPress={handleSubmitLogin}
+        />
+
+        <S.LoginWarning>
+          Faça login para acessar todos os recursos do aplicativo
+        </S.LoginWarning>
+      </S.LoginWrapper>
     </S.LoginContainer>
   );
 };

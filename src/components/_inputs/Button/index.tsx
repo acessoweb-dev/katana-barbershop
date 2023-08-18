@@ -12,7 +12,7 @@ export interface ButtonProps {
   inverted?: boolean;
   loading?: boolean;
   disabled?: boolean;
-  onPress?: () => void;
+  handleOnPress?: () => void;
 }
 
 const Button: React.FunctionComponent<ButtonProps> = ({
@@ -23,7 +23,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
   inverted = false,
   loading,
   disabled,
-  onPress,
+  handleOnPress,
 }) => {
   return (
     <S.Button
@@ -33,7 +33,7 @@ const Button: React.FunctionComponent<ButtonProps> = ({
       loading={loading}
       disabled={!!disabled}
       variantType={variantType}
-      onPress={onPress}
+      onPress={handleOnPress}
     >
       {loading ? (
         <ActivityIndicator

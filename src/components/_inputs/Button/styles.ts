@@ -45,8 +45,8 @@ export const Button = styled.TouchableOpacity<ButtonProps>`
 
 export const ButtonLabel = styled.Text<LabelProps>`
   font-size: ${({ small, theme }) =>
-    small ? theme.fonts.size[12] : theme.fonts.size[16]};
-  font-weight: 500;
+    small ? theme.fonts.size[14] : theme.fonts.size[18]};
+  font-weight: bold;
   font-family: 'Agrandir';
 
   ${({ theme, inverted }) => {

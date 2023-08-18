@@ -1,29 +1,51 @@
 import styled, { DefaultTheme } from 'styled-components/native';
-import { Container as ContainerDefault } from 'styles/commonStyles';
+import { Container, ContentScroll } from 'styles/commonStyles';
 
-export const LoginContainer = styled(ContainerDefault)`
+export const LoginContainer = styled(Container)`
   position: relative;
   flex: 1;
-  justify-content: center;
+  /* justify-content: center;
+  align-items: center; */
+  padding: 30px 40px;
+  /* row-gap: 40px; */
+`;
+
+export const LoginWrapper = styled(ContentScroll)``;
+
+export const LoginHeader = styled.View`
+  flex-direction: column;
   align-items: center;
 `;
 
-export const BackgroundAuth = styled.Image`
-  position: absolute;
-  height: 300px;
+export const LoginLogo = styled.View`
+  margin-bottom: 30px;
+`;
+
+export const LoginTitle = styled.Text`
+  font-family: 'Agrandir';
+  font-size: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[26]};
+  font-weight: bold;
+  color: ${({ theme }: { theme: DefaultTheme }) => theme.primary};
+`;
+
+export const LoginInputsWrapper = styled.View`
+  flex-direction: column;
   width: 100%;
-  top: -60px;
 `;
 
-export const ButtonText = styled.Text`
-  font-size: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[12]};
-  color: ${({ theme }: { theme: DefaultTheme }) => theme.secondary};
+export const LoginNavigationWrapper = styled.View`
+  flex-direction: column;
+  row-gap: 8px;
+`;
+
+export const LoginNavigationItem = styled.TouchableOpacity``;
+
+export const LoginNavigationItemLabel = styled.Text`
   text-align: center;
+  color: white;
 `;
 
-export const ImageAuth = styled.Image`
-  width: 120px;
-  height: 120px;
-  position: absolute;
-  top: 10px;
+export const LoginWarning = styled.Text`
+  text-align: center;
+  color: white;
 `;
