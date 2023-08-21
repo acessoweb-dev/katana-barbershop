@@ -2,6 +2,7 @@ import { RFValue } from 'react-native-responsive-fontsize';
 
 export interface DefaultTheme {
   primary: string;
+  secondary: string;
   text: string;
   textPrimary: string;
   textSecondary: string;
@@ -53,6 +54,7 @@ export interface DefaultTheme {
 
 export const defaultTheme: DefaultTheme = {
   primary: '#C6942A',
+  secondary: '#000000',
   text: '#000000',
   textPrimary: 'rgba(255, 255, 255, 0.98)',
   textSecondary: '#737373',

@@ -16,6 +16,7 @@ import {
   aboutusIcon,
   suggestionsIcon,
   userIcon,
+  logoTransparentImg,
 } from 'assets';
 
 // import { logout } from 'utils/functions';
@@ -85,13 +86,17 @@ const DrawerCustom = (props: any) => {
 
   return (
     <S.DrawerCustomContainer>
-      <S.HeaderStyle.Title>É Profissional ou Empresa?</S.HeaderStyle.Title>
-      <S.HeaderStyle.Content>
-        <S.HeaderStyle.Img source={headerImg} resizeMode="contain" />
-      </S.HeaderStyle.Content>
-      <S.HeaderStyle.Center>
+      <S.HeaderStyle.Header>
+        <S.HeaderStyle.LogoImg
+          source={logoTransparentImg}
+          resizeMode="contain"
+        />
+      </S.HeaderStyle.Header>
+      <S.HeaderStyle.Divisor source={headerImg} resizeMode="contain" />
+
+      <S.HeaderStyle.MenuWrapper>
         {routes.map(el => (
-          <S.HeaderStyle.Item key={el.name} onPress={() => el.nav()}>
+          <S.HeaderStyle.MenuItem key={el.name} onPress={() => el.nav()}>
             <View
               style={{
                 width: 40,
@@ -101,14 +106,14 @@ const DrawerCustom = (props: any) => {
             >
               <Image
                 source={el.icon}
-                style={{ width: 18, height: 30 }}
+                style={{ width: 18, height: 18 }}
                 resizeMode="contain"
               />
             </View>
-            <S.HeaderStyle.Name>{el.name}</S.HeaderStyle.Name>
-          </S.HeaderStyle.Item>
+            <S.HeaderStyle.MenuItemName>{el.name}</S.HeaderStyle.MenuItemName>
+          </S.HeaderStyle.MenuItem>
         ))}
-      </S.HeaderStyle.Center>
+      </S.HeaderStyle.MenuWrapper>
       <S.HeaderStyle.Footer>
         <TouchableOpacity
           onPress={() =>
@@ -117,7 +122,9 @@ const DrawerCustom = (props: any) => {
             )
           }
         >
-          <S.HeaderStyle.Text>Política de privacidade</S.HeaderStyle.Text>
+          <S.HeaderStyle.PolicyText>
+            Política de privacidade
+          </S.HeaderStyle.PolicyText>
         </TouchableOpacity>
       </S.HeaderStyle.Footer>
     </S.DrawerCustomContainer>
