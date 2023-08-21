@@ -9,7 +9,7 @@ import { Props } from 'interfaces/routes.interface';
 const UsefulLinks = ({ route, navigation }: Props) => {
   return (
     <S.UsefulLinksContainer>
-      <BackHeader />
+      <BackHeader title="Links Úteis" />
       <S.UsefulLinksContent>
         <Text>UsefulLinks</Text>
       </S.UsefulLinksContent>

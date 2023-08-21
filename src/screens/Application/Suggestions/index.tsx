@@ -9,7 +9,7 @@ import { Props } from 'interfaces/routes.interface';
 const Suggestions = ({ route, navigation }: Props) => {
   return (
     <S.SuggestionsContainer>
-      <BackHeader />
+      <BackHeader title="Sugestões" />
       <S.SuggestionsContent>
         <Text>Suggestions</Text>
       </S.SuggestionsContent>

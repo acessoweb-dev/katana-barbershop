@@ -3,6 +3,7 @@ import styled, { DefaultTheme } from 'styled-components/native';
 export const BackHeaderContainer = styled.View`
   justify-content: center;
   background-color: transparent;
+  width: 100%;
 `;
 
 export const BackHeaderContent = styled.View`

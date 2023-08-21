@@ -9,7 +9,7 @@ import { Props } from 'interfaces/routes.interface';
 const AboutUs = ({ route, navigation }: Props) => {
   return (
     <S.AboutUsContainer>
-      <BackHeader />
+      <BackHeader title="Sobre Nós" />
       <S.AboutUsContent>
         <Text>AboutUs</Text>
       </S.AboutUsContent>

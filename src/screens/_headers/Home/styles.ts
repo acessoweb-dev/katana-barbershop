@@ -5,6 +5,7 @@ export const HomeHeaderContainer = styled.View`
   z-index: 100;
   justify-content: center;
   background-color: transparent;
+  width: 100%;
 `;
 
 export const HomeHeaderContent = styled.View`

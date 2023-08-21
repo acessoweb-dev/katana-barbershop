@@ -9,7 +9,7 @@ import { Props } from 'interfaces/routes.interface';
 const ChangeCredentials = ({ route, navigation }: Props) => {
   return (
     <S.ChangeCredentialsContainer>
-      <BackHeader />
+      <BackHeader title="Meu Perfil" />
       <S.ChangeCredentialsContent>
         <Text>ChangeCredentials</Text>
       </S.ChangeCredentialsContent>

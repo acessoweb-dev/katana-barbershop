@@ -9,7 +9,7 @@ import { Props } from 'interfaces/routes.interface';
 const Products = ({ route, navigation }: Props) => {
   return (
     <S.ProductsContainer>
-      <BackHeader />
+      <BackHeader title="Produtos" />
       <S.ProductsContent>
         <Text>Products</Text>
       </S.ProductsContent>
