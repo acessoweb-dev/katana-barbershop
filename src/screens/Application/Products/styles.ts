@@ -9,6 +9,7 @@ export const ProductsContent = styled(ContentScroll)`
 
 export const ProductsListing = styled.View`
   row-gap: 10px;
+  padding-bottom: 20px;
 `;
 
 // =================================================== PRODUCT CARD

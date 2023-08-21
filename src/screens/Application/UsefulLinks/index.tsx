@@ -2,11 +2,9 @@ import React from 'react';
 import * as S from './styles';
 
 import BackHeader from 'screens/_headers/Back';
-import { Text } from 'react-native';
 
 import { Props } from 'interfaces/routes.interface';
 import { homeIcon, userIcon } from 'assets';
-import { Image } from 'react-native';
 
 const mockLinks = [
   {

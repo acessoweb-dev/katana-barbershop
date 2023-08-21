@@ -30,6 +30,7 @@ export const ServicesMainCtaLabel = styled.Text`
 
 export const ServicesListing = styled.View`
   row-gap: 15px;
+  padding-bottom: 20px;
 `;
 
 // =================================================== SERVICE CARD

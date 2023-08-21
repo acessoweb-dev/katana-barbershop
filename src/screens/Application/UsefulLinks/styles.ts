@@ -9,6 +9,7 @@ export const UsefulLinksContent = styled(ContentScroll)`
 
 export const UsefulLinksListing = styled.View`
   row-gap: 25px;
+  padding-bottom: 20px;
 `;
 
 export const UsefulLink = styled.TouchableOpacity`

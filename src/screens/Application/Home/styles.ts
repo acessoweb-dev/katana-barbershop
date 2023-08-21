@@ -75,7 +75,7 @@ export const HomeListingWrapper = styled.View`
 
 export const ListingItem = styled.View`
   flex-direction: row;
-  column-gap: 10px;
+  column-gap: 15px;
 `;
 
 export const ListingItemImage = styled.View`
