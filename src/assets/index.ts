@@ -21,3 +21,4 @@ export const passwordIcon = require('./icons/password.png');
 export const authIcon = require('./icons/auth.png');
 export const chevronDownIcon = require('./icons/chevronDown.png');
 export const backIcon = require('./icons/chevronsLeft.png');
+export const whatsappIcon = require('./icons/whatsapp.png');

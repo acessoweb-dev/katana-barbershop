@@ -10,7 +10,7 @@ export const BackHeaderContent = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-between;
-  padding: 20px;
+  padding: 25px 30px;
 `;
 
 export const BackHeaderTitle = styled.Text`

@@ -11,5 +11,5 @@ export const HomeHeaderContainer = styled.View`
 export const HomeHeaderContent = styled.View`
   flex-direction: row;
   align-items: center;
-  padding: 20px;
+  padding: 25px 30px;
 `;

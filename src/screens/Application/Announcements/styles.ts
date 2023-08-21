@@ -1,10 +1,12 @@
 import styled, { DefaultTheme } from 'styled-components/native';
 import { ContainerPage, ContentScroll } from 'styles/commonStyles';
 
-export const AnnouncementsContainer = styled(ContainerPage)``;
+export const AnnouncementsContainer = styled(ContainerPage)`
+  background-color: ${({ theme }) => theme.backgroundApp};
+`;
 
 export const AnnouncementsContent = styled(ContentScroll)`
-  padding: 0 20px;
+  padding: 0 30px;
 `;
 
 export const AnnouncementsBanner = styled.View`
@@ -13,7 +15,7 @@ export const AnnouncementsBanner = styled.View`
   margin-bottom: 40px;
   border-radius: 4px;
 
-  background-color: ${({ theme }) => theme.backgroundApp};
+  background-color: ${({ theme }) => theme.background};
 `;
 
 export const AnnouncementsListing = styled.View`
@@ -33,7 +35,7 @@ export const ListingItemImage = styled.View`
   height: 80px;
   border-radius: 4px;
 
-  background-color: ${({ theme }) => theme.backgroundApp};
+  background-color: ${({ theme }) => theme.background};
 `;
 
 export const ListingItemLegend = styled.Text`

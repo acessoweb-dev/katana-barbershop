@@ -1,10 +1,12 @@
 import styled, { DefaultTheme } from 'styled-components/native';
 import { ContainerPage, ContentScroll } from 'styles/commonStyles';
 
-export const ProductsContainer = styled(ContainerPage)``;
+export const ProductsContainer = styled(ContainerPage)`
+  background-color: ${({ theme }) => theme.backgroundApp};
+`;
 
 export const ProductsContent = styled(ContentScroll)`
-  padding: 0 20px;
+  padding: 0 30px;
 `;
 
 export const ProductsListing = styled.View`
@@ -21,7 +23,7 @@ export const ProductCard = styled.View`
   column-gap: 15px;
   border-radius: 15px;
 
-  background-color: ${({ theme }) => theme.backgroundCard};
+  background-color: ${({ theme }) => theme.background};
 `;
 
 export const ProductCardStyles = {

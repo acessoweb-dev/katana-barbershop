@@ -67,7 +67,7 @@ export const HomeListingHeaderText = styled.Text`
 `;
 
 export const HomeListingWrapper = styled.View`
-  padding: 0 20px 20px 20px;
+  padding: 0 30px 20px 30px;
   row-gap: 10px;
 `;
 

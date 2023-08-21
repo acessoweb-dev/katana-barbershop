@@ -1,20 +1,6 @@
 import styled, { DefaultTheme } from 'styled-components/native';
-import { ContainerPage, ContentScroll } from 'styles/commonStyles';
 
-export const UsefulLinksContainer = styled(ContainerPage)`
-  background-color: ${({ theme }) => theme.backgroundApp};
-`;
-
-export const UsefulLinksContent = styled(ContentScroll)`
-  padding: 0 30px;
-`;
-
-export const UsefulLinksListing = styled.View`
-  row-gap: 25px;
-  padding-bottom: 20px;
-`;
-
-export const UsefulLink = styled.TouchableOpacity`
+export const Link = styled.TouchableOpacity`
   position: relative;
   flex-direction: row;
   align-items: center;
@@ -29,8 +15,8 @@ export const LinkStyles = {
     left: 30px;
   `,
   Icon: styled.Image`
-    width: 25px;
-    height: 25px;
+    width: 28px;
+    height: 28px;
   `,
   Label: styled.Text`
     flex: 1;

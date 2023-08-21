@@ -4,11 +4,12 @@ import { ContainerPage, ContentScroll } from 'styles/commonStyles';
 export const ServicesContainer = styled(ContainerPage)`
   position: relative;
   align-items: center;
+  background-color: ${({ theme }) => theme.backgroundApp};
 `;
 
 export const ServicesContent = styled(ContentScroll)`
   position: relative;
-  padding: 0 20px;
+  padding: 0 30px;
   width: 100%;
 `;
 
@@ -41,7 +42,7 @@ export const ServiceCard = styled.View`
   border-radius: 10px;
   overflow: hidden;
 
-  background-color: ${({ theme }) => theme.backgroundApp};
+  background-color: ${({ theme }) => theme.background};
 `;
 
 export const ServiceCardStyles = {

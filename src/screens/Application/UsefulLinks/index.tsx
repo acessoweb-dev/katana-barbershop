@@ -2,9 +2,11 @@ import React from 'react';
 import * as S from './styles';
 
 import BackHeader from 'screens/_headers/Back';
+import { Link } from 'components';
+
+import { homeIcon, userIcon } from 'assets';
 
 import { Props } from 'interfaces/routes.interface';
-import { homeIcon, userIcon } from 'assets';
 
 const mockLinks = [
   {
@@ -31,14 +33,12 @@ const UsefulLinks = ({ route, navigation }: Props) => {
       <S.UsefulLinksContent>
         <S.UsefulLinksListing>
           {mockLinks.map(link => (
-            <S.UsefulLink key={link.linkId}>
-              {!!link.linkIcon && (
-                <S.LinkStyles.IconContainer>
-                  <S.LinkStyles.Icon source={link.linkIcon} />
-                </S.LinkStyles.IconContainer>
-              )}
-              <S.LinkStyles.Label>{link.linkLabel}</S.LinkStyles.Label>
-            </S.UsefulLink>
+            <Link
+              key={link.linkId}
+              label={link.linkLabel}
+              icon={link.linkIcon}
+              handleOnPress={() => {}}
+            />
           ))}
         </S.UsefulLinksListing>
       </S.UsefulLinksContent>
