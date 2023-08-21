@@ -9,6 +9,7 @@ export interface DefaultTheme {
   header: string;
   background: string;
   backgroundApp: string;
+  backgroundCard: string;
   input: string;
   inputLogin: string;
   error: string;
@@ -60,6 +61,7 @@ export const defaultTheme: DefaultTheme = {
   textSecondary: '#737373',
   background: '#090F0F',
   backgroundApp: '#282929',
+  backgroundCard: 'rgba(0, 0, 0, 0.24)',
   error: '#FF5630',
   header: 'transparent',
   input: 'rgba(255, 255, 255, 0.17)',

@@ -31,7 +31,7 @@ const DrawerCustom = (props: any) => {
       nav: () => {
         navigation.reset({
           index: 0,
-          routes: [{ name: 'Home' }, { name: 'CategoriasRoutes' }],
+          routes: [{ name: 'Home' }],
         });
         navigation.navigate('Home');
       },
