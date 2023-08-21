@@ -9,12 +9,6 @@ export const ChangeCredentialsContent = styled(ContentScroll)`
   padding: 0 30px 20px 30px;
 `;
 
-export const ChangeCredentialsWrapper = styled.View`
-  flex: 1;
-  border-width: 2px;
-  border-color: red;
-`;
-
 export const AccountHeader = styled.Text`
   margin-bottom: 30px;
   text-align: center;

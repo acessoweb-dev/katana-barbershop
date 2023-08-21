@@ -63,8 +63,6 @@ const ChangeCredentials = ({ route, navigation }: Props) => {
         <S.DeleteAccount>
           <S.DeleteAccountLabel>Excluir conta</S.DeleteAccountLabel>
         </S.DeleteAccount>
-        {/* <S.ChangeCredentialsWrapper>
-        </S.ChangeCredentialsWrapper> */}
       </S.ChangeCredentialsContent>
     </S.ChangeCredentialsContainer>
   );
