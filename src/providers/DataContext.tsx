@@ -29,6 +29,12 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
   const [aboutusData, setAboutusData] = useState(null);
   const [aboutusLoading, setAboutusLoading] = useState<boolean>(false);
 
+  const [newsData, setNewsData] = useState(null);
+  const [newsLoading, setNewsLoading] = useState<boolean>(false);
+
+  const [linksData, setLinksData] = useState(null);
+  const [linksLoading, setLinksLoading] = useState<boolean>(false);
+
   const handleGetAboutUs = async () => {
     try {
       setAboutusLoading(true);
@@ -62,7 +68,7 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
         params: query,
       });
 
-      setServicesData(response.data);
+      setServicesData(response);
     } catch (error) {
       console.log(error);
     } finally {
@@ -70,9 +76,48 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
     }
   };
 
+  const handleGetNews = async () => {
+    try {
+      setAboutusLoading(true);
+
+      const { data: response } = await api.get('/lista_noticias.php', {
+        params: {
+          usuario_id: mockUserId,
+        },
+      });
+
+      console.log(response);
+      // setAboutusData(response);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setAboutusLoading(false);
+    }
+  };
+
+  const handleGetSocialMedias = async () => {
+    try {
+      setAboutusLoading(true);
+
+      const { data: response } = await api.get('/redes_socials.php', {
+        params: {
+          usuario_id: mockUserId,
+        },
+      });
+
+      setAboutusData(response[0]);
+    } catch (error) {
+      console.log(error);
+    } finally {
+      setAboutusLoading(false);
+    }
+  };
+
   useEffect(() => {
     handleGetServices();
     handleGetAboutUs();
+    handleGetNews();
+    handleGetSocialMedias();
   }, []);
 
   // useEffect(() => {
@@ -82,6 +127,14 @@ const DataProvider = ({ children }: { children: React.ReactNode }) => {
   // useEffect(() => {
   //   console.log(aboutusData);
   // }, [aboutusData]);
+
+  // useEffect(() => {
+  //   console.log(newsData);
+  // }, [newsData]);
+
+  // useEffect(() => {
+  //   console.log(linksData);
+  // }, [linksData]);
 
   // =================================================================
 
