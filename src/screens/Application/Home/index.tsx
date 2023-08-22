@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import * as S from './styles';
 
 import { Image } from 'react-native';
@@ -8,6 +8,7 @@ import { Button } from 'components';
 import { homeBannerImg } from 'assets';
 
 import { Props } from 'interfaces/routes.interface';
+import api from 'services/api';
 
 const mockHomeListing = [
   {

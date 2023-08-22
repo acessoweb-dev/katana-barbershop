@@ -3,13 +3,16 @@ import { ThemeProvider } from 'styled-components';
 
 import { LoadFonts } from 'components';
 
+import { DataProvider } from 'providers/DataContext';
 import Routes from 'routes';
 
 export default function App() {
   return (
     <LoadFonts>
       <ThemeProvider theme={defaultTheme}>
-        <Routes />
+        <DataProvider>
+          <Routes />
+        </DataProvider>
       </ThemeProvider>
     </LoadFonts>
   );

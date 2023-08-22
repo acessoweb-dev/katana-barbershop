@@ -1,31 +1,15 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import * as S from './styles';
-import { Image, Text, View } from 'react-native';
+import { Image } from 'react-native';
 
 import { Button, Input } from 'components';
 import { authIcon, passwordIcon, logoTransparentImg } from 'assets';
 
-import api from 'services/api';
-
 import { Props } from 'interfaces/routes.interface';
 
-// import { loginSchema } from 'validators/auth.schemas';
-// import { UserLogin } from 'interfaces/auth.interface';
-// import { useForm } from 'react-hook-form';
-// import { yupResolver } from '@hookform/resolvers/yup';
-// import api from 'services/api';
-// import useToast from 'libs/useToast';
-// import { Column, ContentScroll, TitleAuth } from 'components/commons';
-// import Input from 'components/Inputs/Input';
-// import Button from 'components/Button';
-// import { useUserStore } from 'store/user';
-// import { useAuthStore } from 'store/auth';
-// import { ResponseError } from 'interfaces/utils.interface';
-// import axios from 'axios';
-// import { bannerAuth, email, logoauth, password } from 'assets/img';
-// import { Image, TouchableOpacity } from 'react-native';
-
 const Login = ({ route, navigation }: Props) => {
+  const [loading, setLoading] = React.useState<boolean>(false);
+
   const [userValue, setUserValue] = useState('');
   const [passwordValue, setPasswordValue] = useState('');
 
@@ -38,8 +22,6 @@ const Login = ({ route, navigation }: Props) => {
   };
 
   const handleSubmitLogin = () => {};
-
-  // const [loading, setLoading] = React.useState<boolean>(false);
 
   // const toast = useToast();
 
@@ -72,19 +54,6 @@ const Login = ({ route, navigation }: Props) => {
   //     setLoading(false);
   //   }
   // };
-
-  // const {
-  //   control,
-  //   setFocus,
-  //   handleSubmit,
-  //   formState: { errors },
-  // } = useForm<UserLogin>({
-  //   defaultValues: {
-  //     email: '',
-  //     senha: '',
-  //   },
-  //   resolver: yupResolver(loginSchema),
-  // });
 
   return (
     <S.LoginContainer>

@@ -19,11 +19,12 @@ export const AboutUsTitle = styled.Text`
   font-weight: bold;
   font-family: 'Agrandir';
   font-size: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[18]};
+  font-style: italic;
   text-align: center;
   color: ${({ theme }) => theme.inputs.secondary.background};
 `;
 
-export const AboutUsText = styled.Text`
+export const AboutUsText = styled.View`
   font-family: 'Agrandir';
   font-size: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[16]};
   line-height: ${({ theme }: { theme: DefaultTheme }) => theme.fonts.size[18]};
