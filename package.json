@@ -6,7 +6,9 @@
     "start": "expo start",
     "android": "expo start --android",
     "ios": "expo start --ios",
-    "web": "expo start --web"
+    "web": "expo start --web",
+    "build-android-staging": "export NODE_ENV=.env.staging && cd android && ./gradlew assembleRelease && cd ..",
+    "build-android-prod": "export NODE_ENV=.env.prod && cd android && ./gradlew bundleRelease && cd .."
   },
   "dependencies": {
     "@expo/config-plugins": "^7.2.5",
